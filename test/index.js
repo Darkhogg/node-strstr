@@ -72,25 +72,6 @@ describe('ss.readString', function () {
       });
     });
 
-    it('should emit all the string at once if its value is zero', function (done) {
-      var stream = ss.readString(bigString, {'chunkSize': 0});
-      stream.once('data', function (chunk) {
-        expect(chunk).to.have.length(bigString.length);
-        stream.on('data', function () {
-          assert.fail();
-        });
-      });
-      stream.on('close', function () {
-        assert.fail();
-      });
-      stream.on('error', function (err) {
-        assert.fail(err);
-      });
-      stream.on('end', function () {
-        done();
-      });
-    });
-
     it('should not accept a negative value', function () {
       expect(function () {
         ss.readString('', {'chunkSize': -1});

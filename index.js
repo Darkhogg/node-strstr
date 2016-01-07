@@ -11,8 +11,7 @@ function StringReadStream (string, opts_) {
   this.string = string;
   this.options = opts_ || {};
 
-  this.options.chunkSize = (this.options.chunkSize === undefined) ? 1000 :
-    parseInt(this.options.chunkSize) || this.string.length;
+  this.options.chunkSize = parseInt(this.options.chunkSize) || 1000;
 
   if (this.options.chunkSize < 0) {
     throw new RangeError('chunkSize must be non-negative: ' + this.options.chunkSize);

@@ -1,18 +1,15 @@
-StringStream
-============
+StrStr
+======
 
-`string-stream` is a small Node.js library that provides a way of both reading a string as a Node
+`strstr` is a small Node.js library that provides a way of both reading a string as a Node
 stream and to gather all data from a Node stream and return a string from it.
-
-Why?
-----
 
 
 Usage
 -----
 
 ```javascript
-var ss = require('string-stream');
+var ss = require('strstr');
 
 // Read a string as if it were a Node stream
 ss.readString('foo\nbar\n').pipe(process.stdout);
@@ -31,7 +28,10 @@ The number of `data` events fired depends on both the `string` and the `options`
 function, and should generally not be relied upon.  In particular, no `data` events are ever fired
 if the passed string is empty.
 
-The `options` object is currently unused.
+The `options` object can contain the following keys:
+
+  + **`chunkSize`**: Determines the size of the chunks emitted by the stream.  If unspecified or
+    set to 0, selects a default size that's small but not too small.
 
 ### `ss.writeString(stream)`
 
