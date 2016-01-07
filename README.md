@@ -1,4 +1,4 @@
-StrStr
+StrStr ![](https://img.shields.io/npm/v/strstr.svg)
 ======
 
 `strstr` is a small Node.js library that provides a way of both reading a string as a Node
