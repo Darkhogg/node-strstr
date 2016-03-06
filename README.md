@@ -36,7 +36,7 @@ The `options` object can contain the following keys:
 ### `ss.writeString(stream)`
 
 Returns a [Promise][] that will eventually be fulfilled with the accumulated value read from the
-passed [readable `stream`][].  If the passed stream emits an `error` event, the returned promise
+passed [readable stream][].  If the passed stream emits an `error` event, the returned promise
 will be rejected instead, with the emitted error as it rejection reason.
 
   [readable stream]: https://nodejs.org/api/stream.html#stream_class_stream_readable
